@@ -1,5 +1,71 @@
 {{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-2 sidebar">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg">
+            <h1>PROFILE</h1>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg">
+            <ul class="side-menu">
+              <li>
+                <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+                {{link-to 'Home' 'application' }}
+              </li>
+              <hr/>
+              <li>
+                <span class="glyphicon glyphicon-tags" aria-hidden="true"></span>
+                {{link-to 'Concesionarios' 'concesses' }}
+              </li>
+              <li>
+                <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                Vehículos
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-10">
+      {{outlet}}
+    </div>
+  </div>
+</div>
 
-{{outlet}}
+{{!-- Feel free to remove this! --}}
+<style>
+  .glyphicon{
+    padding: 0 5px;
+  }
+  .actions{
+    padding: 0 10px;
+  }
+  .right{
+    float: right; 
+  }
+  .sidebar a, .sidebar a:link, .sidebar a:visited{
+    text-decoration: none;
+    color: #FFF;
+  }
+  .sidebar{
+    background-color: #ff4800;
+    height: 100vh;
+  }
+  .side-menu{
+    text-decoration: none;
+    padding: 40px 0;
+    {{!-- list-style: none; --}}
+  }
+  .side-menu li{
+    color: #FFF;
+    text-decoration: none;
+    margin-top: 15%;
+    list-style: none;
+  }
+  .row{
+    width: 100%;
+  }
+</style>

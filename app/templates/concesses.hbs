@@ -1,0 +1,11 @@
+<h1>Concesionarios</h1>
+<div class="row">
+	{{#each model as |concess|}}
+		<div class="col-lg-3">
+			{{concess-list c=concess}}
+		</div>
+	{{/each}}
+</div>
+
+
+{{outlet}}

@@ -1,0 +1,26 @@
+<h1>{{#link-to 'concesses'}}<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>{{/link-to}}{{model.name}}</h1>
+<hr>
+<div class="row">
+  <div class="col-lg-8">
+    <h3>Número aprox. de vehiculos: {{model.aproxNum}}</h3>
+    <h3>Tipo de vehiculos: {{#unless model.carsType}}<em>No especificado</em>{{/unless}}</h3>
+    <h3>Número de contacto: {{model.contactNumber}}</h3>
+  </div>
+  <div class="col-lg-4">
+    <h2>Comments</h2>
+    <ul class="list-group">
+      {{#each model.comments as |comment|}}
+        <li class="list-group-item">
+          <em>{{comment.body}}</em>
+        </li>
+      {{/each}}  
+    </ul>
+  </div>
+</div>
+
+<style>
+  .glyphicon-chevron-left{
+    font-size: 3rem;
+    padding: 0 10px;
+  }
+</style>
