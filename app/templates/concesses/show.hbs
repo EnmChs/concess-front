@@ -1,10 +1,23 @@
-<h1>{{#link-to 'concesses'}}<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>{{/link-to}}{{model.name}}</h1>
+<div class="row">
+  <div class="col-lg-10">
+    <h1>{{#link-to 'concesses'}}<i class="fa fa-arrow-left" aria-hidden="true"></i>{{/link-to}}{{model.name}}</h1>
+  </div>
+  <div class="col-lg-2">
+    <button{{action 'confirm' model}} class="btn danger-btn">
+      <i class="fa fa-trash-o" aria-hidden="true"></i>
+    </button>
+  </div>
+  
+</div>
+
 <hr>
 <div class="row">
   <div class="col-lg-8">
-    <h3>Número aprox. de vehiculos: {{model.aproxNum}}</h3>
-    <h3>Tipo de vehiculos: {{#unless model.carsType}}<em>No especificado</em>{{/unless}}</h3>
-    <h3>Número de contacto: {{model.contactNumber}}</h3>
+    {{!-- <h3>Número aprox. de vehiculos: {{if model.aproxNum model.aproxNum "No especificado"}}</h3> --}}
+    <h3>Número aprox. de vehiculos: {{if model.aproxNum model.aproxNum "No especificado"}}</h3>
+    <h3>Tipo de vehiculos: {{if model.carsType model.carsType "No especificado"}}</h3>
+    <h3>Número de contacto: {{if model.contactNumber model.contactNumber 'No especificado'}}</h3>
+    <h3>Dirección: {{if model.address model.address 'No especificado'}}</h3>
   </div>
   <div class="col-lg-4">
     <h2>Comments</h2>
@@ -19,8 +32,17 @@
 </div>
 
 <style>
-  .glyphicon-chevron-left{
+  .danger-btn:hover{
+    background-color: red;
+    color: white;
+    transition: .3s;
+  }
+  .danger-btn{
+    transition: .3s;
+  }
+  .fa-arrow-left{
     font-size: 3rem;
     padding: 0 10px;
   }
+  
 </style>

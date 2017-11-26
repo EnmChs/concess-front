@@ -11,11 +11,12 @@ Router.map(function() {
   this.route('vehicles');
 
 
-
   //CONCESSES
-  this.route('concesses');
-  this.route('concesses.show', { path: '/concesses/:concess_id' });
+  this.route('concesses', function(){});
   this.route('concesses.new', { path: '/concesses/new' })
+  
+  this.route('concesses.show', { path: '/concesses/:concess_id' });
+  
   //END - CONCESSES
 });
 

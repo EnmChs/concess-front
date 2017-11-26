@@ -1,0 +1,22 @@
+{
+  "name": "concess-front",
+  "description": "Small description for fake-front goes here",
+  "main": "",
+  "authors": [
+    "EnmChs <enmachs@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/EnmChs/concess-front",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "font-awesome": "fontawesome#^4.7.0",
+    "active-model-adapter": "^2.1.1"
+  }
+}

@@ -1,42 +1,87 @@
 {{!-- The following component displays Ember's default welcome message. --}}
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-lg-2 sidebar">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-lg">
-            <h1>PROFILE</h1>
+
+<div id="wrapper">
+  <!-- Sidebar -->
+  <div id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+      <li class="sidebar-brand">
+        <a href="#">
+          Concess App
+        </a>
+      </li>
+      <li>
+        {{link-to 'Home' 'application' }}
+      </li>
+      <li>
+        {{link-to 'Concesionarios' 'concesses' }}
+      </li>
+      <li>
+        <a href="#">Overview</a>
+      </li>
+      <li>
+        <a href="#">Events</a>
+      </li>
+      <li>
+        <a href="#">About</a>
+      </li>
+      <li>
+        <a href="#">Services</a>
+      </li>
+      <li>
+        <a href="#">Contact</a>
+      </li>
+    </ul>
+  </div>
+  <div id="page-content-wrapper">
+    <div class="container-fluid">
+      <div class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            {{!-- <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">Toggle Menu</a> --}}
+            <div class="navTrigger" id="menu-toggle">
+              <i></i>
+              <i></i>
+              <i></i>
+            </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="col-lg">
-            <ul class="side-menu">
-              <li>
-                <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
-                {{link-to 'Home' 'application' }}
+          <form class="navbar-form navbar-right right" role="search">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Search">
+            </div>
+            <button class="btn btn-default"><i class="fa fa-search"></i></button>
+          </form>
+          
+          <div class="navbar-collapse collapse" id="navbar">
+            {{!-- <ul class="navbar-right nav navbar-nav">
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-fw fa-bell-o"></i> Bildirimler <span class="badge">0</span></a>
+                <ul class="dropdown-menu" role="menu">
+                  <li class="dropdown-header">No message.</li>
+                </ul>
               </li>
-              <hr/>
-              <li>
-                <span class="glyphicon glyphicon-tags" aria-hidden="true"></span>
-                {{link-to 'Concesionarios' 'concesses' }}
-              </li>
-              <li>
-                <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-                Vehículos
-              </li>
-            </ul>
+            </ul> --}}
           </div>
         </div>
       </div>
-    </div>
-    <div class="col-lg-10">
       {{outlet}}
     </div>
   </div>
 </div>
 
-{{!-- Feel free to remove this! --}}
+    <!-- Menu Toggle Script -->
+<script>
+  $("#menu-toggle, .sidebar-nav li").click(function(e) {
+    $("#wrapper").toggleClass("toggled");
+  });
+  $('.navTrigger, .sidebar-nav li').click(function(){
+    $(".navTrigger").toggleClass('active');
+  });
+</script>
+
 <style>
+  h1{
+    margin-top: 0;
+  }
   .glyphicon{
     padding: 0 5px;
   }
@@ -45,19 +90,6 @@
   }
   .right{
     float: right; 
-  }
-  .sidebar a, .sidebar a:link, .sidebar a:visited{
-    text-decoration: none;
-    color: #FFF;
-  }
-  .sidebar{
-    background-color: #ff4800;
-    height: 100vh;
-  }
-  .side-menu{
-    text-decoration: none;
-    padding: 40px 0;
-    {{!-- list-style: none; --}}
   }
   .side-menu li{
     color: #FFF;

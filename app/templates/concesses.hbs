@@ -1,11 +1,35 @@
-<h1>Concesionarios</h1>
 <div class="row">
-	{{#each model as |concess|}}
-		<div class="col-lg-3">
-			{{concess-list c=concess}}
+	<div class="col-lg">
+		<div class="row">
+			<div class="col-lg-10">
+				<h1>Concesionarios</h1>
+			</div>
+			<div class="col-lg-2">
+				{{#link-to 'concesses.new'}}
+					<button class="btn">
+						<span style="margin-right: 5px;">New concess</span><i class="fa fa-plus"  aria-hidden="true"></i>
+					</button>
+				{{/link-to}}
+			</div>
 		</div>
-	{{/each}}
+		
+		
+		<hr>
+		<h1></h1>
+		<div class="row">
+			{{#each model as |concess|}}
+				<div class="col-lg-4">
+					{{concess-list c=concess}}
+				</div>
+			{{/each}}
+		</div>
+	</div>
+	<div class="col-lg">
+		{{outlet 'menu'}}
+	</div>
 </div>
 
 
-{{outlet}}
+
+
+
