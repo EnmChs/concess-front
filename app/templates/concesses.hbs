@@ -1,5 +1,5 @@
 <div class="row">
-	<div class="col-lg">
+	<div class="col-lg-8">
 		<div class="row">
 			<div class="col-lg-10">
 				<h1>Concesionarios</h1>
@@ -12,22 +12,26 @@
 				{{/link-to}}
 			</div>
 		</div>
-		
-		
 		<hr>
 		<h1></h1>
 		<div class="row">
 			{{#each model as |concess|}}
-				<div class="col-lg-4">
+				<div class="col-lg-12">
 					{{concess-list c=concess}}
 				</div>
 			{{/each}}
 		</div>
 	</div>
-	<div class="col-lg">
-		{{outlet 'menu'}}
+	<div class="col-lg-4">
+		{{liquid-outlet}}
 	</div>
 </div>
+
+<style>
+	.warranted{
+		margin-top: 20px;
+	}
+</style>
 
 
 

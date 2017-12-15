@@ -1,0 +1,12 @@
+<div class="thumbnail">
+  <div class="caption">
+    <h3>{{car.brand}}</h3>
+  </div>
+  <hr>
+  <div class="actions">
+    <div class="right">
+      {{# link-to 'concesses.show' car.concess.id }}{{car.concess.name}}{{/link-to}}
+    </div>
+    <p>{{car.comments.length}} Comments</p>
+  </div>
+</div>

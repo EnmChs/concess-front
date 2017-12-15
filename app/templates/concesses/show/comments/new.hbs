@@ -1,0 +1,13 @@
+{{model.name}}
+<form {{action "createComment" model on="submit"}}>
+  {{input type="text" value=body}}
+</form>
+
+
+{{liquid-outlet}}
+
+<style>
+  input{
+    color: black;
+  }
+</style>

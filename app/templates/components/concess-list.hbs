@@ -1,13 +1,29 @@
-<div class="thumbnail">
-  <div class="caption">
-    <h3>{{c.name}}</h3>
+<div class="panel">
+  <div class="row">
+    <div class="col-lg-10">
+      <h3>{{c.name}}</h3>
+    </div>
+    <div class="col-lg-2">
+      <h5 class="warranted pull-right ">
+        <i class="fa fa-{{if c.warranty 'check-square-o be-green' 'ban be-red'}} "></i>
+      </h5>
+    </div>
   </div>
-  <hr>
+  
   <div class="actions">
     <div class="right">
-      {{ link-to 'Ver' 'concesses.show' c }}
+      {{# link-to 'concesses.preview' c.id }}Ver{{/link-to}}
     </div>
     <p>{{c.comments.length}} Comments</p>
   </div>
 </div>
+
+<style>
+  .be-green{
+    color: green;
+  }
+  .be-red{
+    color: red;
+  }
+</style>
 

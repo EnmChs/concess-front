@@ -1,1 +1,19 @@
-{{outlet}}
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-8">
+      <div class="row">
+        {{#each model as |vehicle|}}
+          <div class="col-lg-3">
+            {{car-list car=vehicle}}
+          </div>
+          
+        {{/each}}
+        
+      </div>
+    </div>
+    <div class="col-lg-4"></div>
+  </div>
+</div>
+<h1>Vehiculos</h1>
+
+{{liquid-outlet}}

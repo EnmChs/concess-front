@@ -16,19 +16,10 @@
         {{link-to 'Concesionarios' 'concesses' }}
       </li>
       <li>
-        <a href="#">Overview</a>
+        {{link-to 'Vehiculos' 'vehicles' }}
       </li>
       <li>
-        <a href="#">Events</a>
-      </li>
-      <li>
-        <a href="#">About</a>
-      </li>
-      <li>
-        <a href="#">Services</a>
-      </li>
-      <li>
-        <a href="#">Contact</a>
+        
       </li>
     </ul>
   </div>
@@ -49,6 +40,7 @@
               <input type="text" class="form-control" placeholder="Search">
             </div>
             <button class="btn btn-default"><i class="fa fa-search"></i></button>
+            
           </form>
           
           <div class="navbar-collapse collapse" id="navbar">
@@ -63,7 +55,7 @@
           </div>
         </div>
       </div>
-      {{outlet}}
+      {{liquid-outlet}}
     </div>
   </div>
 </div>

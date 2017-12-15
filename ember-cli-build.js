@@ -10,7 +10,16 @@ module.exports = function(defaults) {
   });
   //app.import('bower_components/bootstrap/dist');
   app.import('bower_components/bootstrap/dist/js/bootstrap.js');
+  app.import('bower_components/jquery/dist/jquery.min.js');
   app.import('bower_components/moment/min/moment.min.js');
+
+  app.import('bower_components/bootstrap/dist/js/bootstrap.min.js');
+  app.import('bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js');
+  app.import('bower_components/bootstrap/dist/css/bootstrap.min.css');
+  app.import('bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css');
+  
+  
+
 
   var fontawesome = new funnel('bower_components/font-awesome/fonts', {
     srcDir: '/',

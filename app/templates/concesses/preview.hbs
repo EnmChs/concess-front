@@ -1,0 +1,57 @@
+
+<div class="well">
+  {{#link-to 'concesses'}}
+    <i class="fa fa-close pull-right"></i>
+  {{/link-to}}
+  <h2>Preview of {{model.name}}</h2>
+  <hr>
+  <span class="badge">Descripción</span>
+  <p>{{model.description}}</p>
+
+  <span class="badge">Garantía</span>
+  <p>{{if model.warranty 'True' 'False'}}</p>
+  <div class="row">
+    <div class="col-lg">
+      <div class="action-btn">
+        {{#link-to 'concesses.show' model.id}}
+          <button class="btn showed">
+            <i class="fa fa-share" aria-hidden="true"></i>
+          </button>
+        {{/link-to}}
+        {{#link-to 'concesses.edit' model.id}}
+          <button class="btn edit">
+            <i class="fa fa-pencil" aria-hidden="true"></i>
+          </button>
+        {{/link-to}}
+        <button{{action 'confirm' model}} class="btn danger-btn">
+          <i class="fa fa-trash-o" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  
+  {{liquid-outlet}}
+</div>
+
+<style>
+  .showed:hover{
+    background-color: green;
+    color: white;
+  }
+  .edit:hover{
+    background-color: blue;
+    color: white;
+
+  }
+  .danger-btn:hover{
+    background-color: red;
+    color: white;
+    transition: .3s;
+  }
+  .danger-btn, .edit, .showed{
+    transition: .3s;
+  }
+  .action-btn{
+    float: right;
+  }
+</style>

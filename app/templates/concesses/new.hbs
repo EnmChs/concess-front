@@ -1,22 +1,44 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-lg">
-      <h1 class="">Nuevo concesionario!</h1>
-      <hr>
+<div class="well">
+  {{#link-to 'concesses'}}<i class="fa fa-close pull-right"></i>{{/link-to}}
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg">
+        <h2 class="">New!</h2>
+        <hr>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        {{!-- <div id="liquid-bind-demo">{{liquid-bind name}}</div> --}}
+        <div class="input-group" >
+          <label>Nombre</label>
+          {{input type="text" value=name class="form-control"}}
+        </div>
+        <div class="input-group">
+          <label>Descripción</label>
+          {{input type="text" value=description class="form-control"}}
+        </div>
+        <div class="input-group">
+          <label for="warranty">Garantía</label>
+          {{input type="checkbox" name="warranty" checked=warranty class="form-control"}} 
+        </div>
+    
+        <div class='input-group date' id='datetimepicker3'>
+            {{input type="text" name="opentime" value=timeopen class="form-control"}} 
+            <span class="input-group-addon">
+              <span class="glyphicon glyphicon-time"></span>
+            </span>
+        </div>
+        <script type="text/javascript">
+            
+        </script>
+        
+        <button{{action 'createConcess'}} class="btn pull-right">Crear</button>
+      </div>
     </div>
   </div>
-  <div class="row">
-    <div class="col-lg-4">
-      
-      <div class="input-group">
-        <label>Nombre</label>
-        {{input type="text" value=concess_name class="form-control"}}
-      </div>
-      <div class="input-group">
-        <label>N° aprox de autos</label>
-        {{input type="number" value=aproxNum class="form-control"}}
-      </div>
-      <div class="input-group">
+</div>
+      {{!-- <div class="input-group">
         <label>Tipo de vehiculos</label>
         <select onchange={{action (mut type) value="target.value"}} class="form-control">
           <option value="x" selected>Selecciona un tipo de vehiculo</option>
@@ -24,15 +46,9 @@
             <option value={{typeChoice}} selected={{if type typeChoice}}>{{typeChoice}}</option>
           {{/each}}
         </select>
-      </div>
-      <div class="input-group">
-        <label for="warranty">Garantía</label>
-        {{input type="checkbox" name="warranty" checked=warranty class="form-control"}} 
-      </div>
+      </div> --}}
       
-      
-    </div>
-    <div class="col-lg-4">
+    {{!-- <div class="col-lg-4">
       <div class="input-group">
         <label>Número de contacto</label>
         {{input type="text" value=contact class="form-control" aria-describedby="basic-addon1"}}
@@ -40,7 +56,7 @@
       <div class="input-group">
         <label>Dirección</label>
         {{textarea value=address cols="30" rows="6" class="form-control"}}
-      </div>
+      </div> --}}
       
 
       
@@ -55,8 +71,8 @@
         <line id="hitArea" fill="none" stroke="transparent" stroke-width="100" stroke-linecap="round" stroke-miterlimit="10" x1="350" y1="300" x2="450" y2="300"/>
       </svg> --}}
       
-    </div>
-    <div class="col-lg-4">
+    {{!-- </div> --}}
+    {{!-- <div class="col-lg-4">
       <div class="input-group">
         <label>Abrimos a las</label>
         {{input type="datetime" value=timeopen class="form-control"}}
@@ -66,17 +82,22 @@
         <label>Cerramos a las</label>
         {{input type="datetime" value=timeclose class="form-control"}}
       </div>
-      <button{{action 'createConcess'}} class="btn">Crear</button>
-    </div>
-  </div>
-</div>
+      
+    </div> --}}
+
 
 <style>
   .input-group{
     margin-top: 20px;
   }
 </style>
-
+<script>
+  $(function () {
+    $('#datetimepicker3').datetimepicker({
+      format: 'LT'
+    });
+  });
+</script>
 {{!-- <script>
   var xmlns = "http://www.w3.org/2000/svg",
   xlinkns = "http://www.w3.org/1999/xlink",
